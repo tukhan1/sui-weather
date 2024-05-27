@@ -8,7 +8,7 @@
 import Foundation
 
 extension String {
-    func toDate() -> String {
+    func toDayOfTheWeek() -> String {
         let df = DateFormatter()
         df.dateFormat = "yyyy-MM-dd"
         let date = df.date(from: self) ?? Date()

@@ -10,7 +10,7 @@ import Combine
 
 class WeatherViewModel: ObservableObject {
     @Published var days: [Weather] = []
-    private var weatherService = WeatherService()
+    private let weatherService = WeatherService()
     
     init() {
         fetchWeather()

@@ -11,6 +11,12 @@
 		7713CF3D2BF11204003E8C21 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7713CF3C2BF11204003E8C21 /* ContentView.swift */; };
 		7713CF3F2BF11206003E8C21 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7713CF3E2BF11206003E8C21 /* Assets.xcassets */; };
 		7713CF422BF11206003E8C21 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7713CF412BF11206003E8C21 /* Preview Assets.xcassets */; };
+		7727FB072BF242E200138266 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7727FB062BF242E200138266 /* WeatherService.swift */; };
+		77DC85932C04B468000D2B3F /* DTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DC85922C04B468000D2B3F /* DTO.swift */; };
+		77DC85962C04B990000D2B3F /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 77DC85952C04B990000D2B3F /* Kingfisher */; };
+		77DC85982C04BDB6000D2B3F /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DC85972C04BDB6000D2B3F /* WeatherViewModel.swift */; };
+		77DC859E2C04D758000D2B3F /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DC859D2C04D758000D2B3F /* String+Ext.swift */; };
+		77F7D9CD2BF13C6200C17705 /* WeatherButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F7D9CC2BF13C6200C17705 /* WeatherButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +25,12 @@
 		7713CF3C2BF11204003E8C21 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7713CF3E2BF11206003E8C21 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7713CF412BF11206003E8C21 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		7727FB062BF242E200138266 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
+		77DC85922C04B468000D2B3F /* DTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DTO.swift; sourceTree = "<group>"; };
+		77DC85972C04BDB6000D2B3F /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
+		77DC859A2C04C4F4000D2B3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		77DC859D2C04D758000D2B3F /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
+		77F7D9CC2BF13C6200C17705 /* WeatherButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77DC85962C04B990000D2B3F /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,9 +64,13 @@
 		7713CF392BF11204003E8C21 /* sui-weather */ = {
 			isa = PBXGroup;
 			children = (
+				77DC85992C04BE24000D2B3F /* WeatherScreen */,
+				77DC859C2C04D5E6000D2B3F /* CustomContent */,
+				77DC859B2C04D5D7000D2B3F /* Model */,
+				77DC859F2C04D9FF000D2B3F /* Extensions  */,
 				7713CF3A2BF11204003E8C21 /* sui_weatherApp.swift */,
-				7713CF3C2BF11204003E8C21 /* ContentView.swift */,
 				7713CF3E2BF11206003E8C21 /* Assets.xcassets */,
+				77DC859A2C04C4F4000D2B3F /* Info.plist */,
 				7713CF402BF11206003E8C21 /* Preview Content */,
 			);
 			path = "sui-weather";
@@ -65,6 +82,40 @@
 				7713CF412BF11206003E8C21 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		77DC85992C04BE24000D2B3F /* WeatherScreen */ = {
+			isa = PBXGroup;
+			children = (
+				7713CF3C2BF11204003E8C21 /* ContentView.swift */,
+				77DC85972C04BDB6000D2B3F /* WeatherViewModel.swift */,
+			);
+			path = WeatherScreen;
+			sourceTree = "<group>";
+		};
+		77DC859B2C04D5D7000D2B3F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				77DC85922C04B468000D2B3F /* DTO.swift */,
+				7727FB062BF242E200138266 /* WeatherService.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		77DC859C2C04D5E6000D2B3F /* CustomContent */ = {
+			isa = PBXGroup;
+			children = (
+				77F7D9CC2BF13C6200C17705 /* WeatherButton.swift */,
+			);
+			path = CustomContent;
+			sourceTree = "<group>";
+		};
+		77DC859F2C04D9FF000D2B3F /* Extensions  */ = {
+			isa = PBXGroup;
+			children = (
+				77DC859D2C04D758000D2B3F /* String+Ext.swift */,
+			);
+			path = "Extensions ";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +134,9 @@
 			dependencies = (
 			);
 			name = "sui-weather";
+			packageProductDependencies = (
+				77DC85952C04B990000D2B3F /* Kingfisher */,
+			);
 			productName = "sui-weather";
 			productReference = 7713CF372BF11204003E8C21 /* sui-weather.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +165,9 @@
 				Base,
 			);
 			mainGroup = 7713CF2E2BF11204003E8C21;
+			packageReferences = (
+				77DC85942C04B990000D2B3F /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 7713CF382BF11204003E8C21 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -137,8 +194,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7727FB072BF242E200138266 /* WeatherService.swift in Sources */,
+				77DC859E2C04D758000D2B3F /* String+Ext.swift in Sources */,
+				77DC85982C04BDB6000D2B3F /* WeatherViewModel.swift in Sources */,
 				7713CF3D2BF11204003E8C21 /* ContentView.swift in Sources */,
 				7713CF3B2BF11204003E8C21 /* sui_weatherApp.swift in Sources */,
+				77F7D9CD2BF13C6200C17705 /* WeatherButton.swift in Sources */,
+				77DC85932C04B468000D2B3F /* DTO.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +337,9 @@
 				DEVELOPMENT_TEAM = H7H9P2C2C5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "sui-weather/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -287,9 +352,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "Egor-Tushev.sui-weather";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -304,6 +373,9 @@
 				DEVELOPMENT_TEAM = H7H9P2C2C5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "sui-weather/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -316,9 +388,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "Egor-Tushev.sui-weather";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -344,6 +420,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		77DC85942C04B990000D2B3F /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.11.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		77DC85952C04B990000D2B3F /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 77DC85942C04B990000D2B3F /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7713CF2F2BF11204003E8C21 /* Project object */;
 }

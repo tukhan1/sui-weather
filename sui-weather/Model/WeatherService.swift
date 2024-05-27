@@ -7,15 +7,13 @@
 
 import UIKit
 
-
-
 class WeatherService {
     
-    private let apiKey = "0cdcaa6f0a134183aad105512242705"
+    private static let apiKey = ""
     
     func fetchWeatherData(complition: @escaping (Result<[Weather], Error>) -> Void) {
         
-        let stringURL = "http://api.weatherapi.com/v1/forecast.json?key=\(apiKey)&q=moscow&days=6"
+        let stringURL = "http://api.weatherapi.com/v1/forecast.json?key=\(Self.apiKey)&q=moscow&days=6"
         
         guard let url = URL(string: stringURL) else { return }
         
@@ -27,20 +25,17 @@ class WeatherService {
                 return
             }
             guard let safeData = data else {
+                complition(.failure(NSError()))
                 return
             }
             do {
                 let decoder = JSONDecoder()
                 let decodedData = try decoder.decode(WeatherForcast.self, from: safeData)
-                print(decodedData)
-                print(decodedData)
-                print(decodedData)
                 let weather = decodedData.forecast.forecastday.map {
-                    Weather(day: $0.date,
+                    Weather(day: $0.date.toDayOfTheWeek(),
                             imageName: $0.day.condition.icon.replacingOccurrences(of: "//", with: "http://"),
                             temperature: Int($0.day.avgtemp_c))
                 }
-                print(weather)
                 complition(.success(weather))
             } catch {
                 complition(.failure(error))

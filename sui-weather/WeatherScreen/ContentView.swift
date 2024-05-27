@@ -11,10 +11,7 @@ import Kingfisher
 struct ContentView: View {
     
     @StateObject private var viewModel = WeatherViewModel()
-    
     @State private var isNight = false
-    
-    let weatherService = WeatherService()
     
     var body: some View {
         ZStack {
@@ -23,17 +20,14 @@ struct ContentView: View {
             
             VStack {
                 CityTextView(cityName: "Москва, Россия")
-
+                
                 WeatherStatusView(imageName: isNight ? "moon.stars.fill" : "cloud.sun.fill",
                                   temperature: 28)
                 
-                HStack(spacing: 10) {
-                    WeatherDayView(weather: Weather(day: "ВТ", imageName: "x", temperature: 12))
-                    WeatherDayView(weather: Weather(day: "СР", imageName: "x", temperature: 12))
-                    WeatherDayView(weather: Weather(day: "ЧТ", imageName: "x", temperature: 12))
-                    WeatherDayView(weather: Weather(day: "ПТ", imageName: "x", temperature: 12))
-                    WeatherDayView(weather: Weather(day: "СБ", imageName: "x", temperature: 12))
+                LazyHStack(spacing: 10) {
+                    ForEach(viewModel.days, id:\.day) { WeatherDayView(weather: $0) }
                 }
+                
                 Spacer()
                 Button {
                     isNight.toggle()
@@ -52,7 +46,6 @@ struct ContentView: View {
 }
 
 #Preview {
-
     ContentView()
 }
 
